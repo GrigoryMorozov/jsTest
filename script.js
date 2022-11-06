@@ -62,7 +62,30 @@
 
 // console.log(m&&f);
 
-const  numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели?', '');
+// const  numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+// const personalMovieDB={
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false,
+// };
+
+// const a=prompt('Один из последних просмотренных фильмов?',''),
+// 	  b=prompt('На сколько оцените его?', ''),
+// 	  c=prompt('Один из последних просмотренных фильмов?',''),
+// 	  d=prompt('На сколько оцените его?', '');
+
+
+// personalMovieDB.movies[a]=b;
+// personalMovieDB.movies[c]=d;
+
+// console.log(personalMovieDB);
+
+// повтор решения задачи
+
+const numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB={
 	count: numberOfFilms,
@@ -72,13 +95,13 @@ const personalMovieDB={
 	privat: false,
 };
 
-const a=prompt('Один из последних просмотренных фильмов?',''),
-	  b=prompt('На сколько оцените его?', ''),
-	  c=prompt('Один из последних просмотренных фильмов?',''),
-	  d=prompt('На сколько оцените его?', '');
-
+const a=prompt('Один из последних просмотренных фильмов?', '');
+const b=prompt('На сколько оцените его?', '');
+const c=prompt('Один из последних просмотренных фильмов?', '');
+const d=prompt('На сколько оцените его?', '');
 
 personalMovieDB.movies[a]=b;
 personalMovieDB.movies[c]=d;
 
 console.log(personalMovieDB);
+// с alert не получается, забыл + в 88 строке и правильное написание prompt
