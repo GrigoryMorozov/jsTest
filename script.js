@@ -222,16 +222,16 @@
 
 // отработка решений первой и второй задач
 
-let numberOfFilms=+prompt('Сколько фильмов вы уже посмотрели?', '');
+// let numberOfFilms=+prompt('Сколько фильмов вы уже посмотрели?', '');
 
-let personalMovieDB={
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false,
+// let personalMovieDB={
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false,
 
-}
+// }
 
 // const a=prompt('Один из последних просмотренных фильмов?', ''),
 // 	  b=prompt('На сколько оцените его?', ''),
@@ -266,3 +266,116 @@ let personalMovieDB={
 
 
 // console.log(personalMovieDB);
+
+// функции
+
+// let num=20;
+// console.log(calc(4,3));
+// console.log(calc(5,6));
+// console.log(calc(10,6));
+
+// function showFirstMessage(text){
+// 	console.log(text);
+// 	num=10;
+// }
+
+// showFirstMessage('hello word');
+// console.log(num);
+
+// function calc(a,b){
+// 	return(a+b);
+// }
+
+
+// function ret(){
+// 	let num=50;
+// 	return num;
+// }
+
+// const anotherNum=ret();
+// console.log(anotherNum);
+
+
+// const logger=function(){
+// 	console.log('hello');
+// };
+// logger();
+
+// const calc=(a,b)=>a+b;
+
+
+// методы и свойства строк и чисел
+
+// const str="teSt";
+// console.log(str.length);
+// const arr=[1,2,3,4,5];
+// console.log(arr.length);
+// console.log(str[2]);
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
+
+// let fruit="Some fruit";
+// console.log(fruit.indexOf("fruit"));
+
+// const logg="hello world";
+// console.log(logg.slice(6,11));
+// const a=logg.indexOf("hello");
+// console.log(a);
+// const b=a+5;
+// console.log(logg.slice(a,b));
+// console.log(logg.slice(a,b)+logg.slice(7,8));
+
+// console.log(logg.substring(6,11));
+
+// console.log(logg.substr(6,5));
+
+// работа с числами методы и свойства
+
+// const num=12.2;
+// console.log(Math.round(num));
+
+// const test="12.2px";
+// console.log(parseInt(test));
+// console.log(parseFloat(test));
+
+let numberOfFilms;
+
+function start(){
+	numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели? ', '');
+
+	while(numberOfFilms==''||numberOfFilms==null||isNaN(numberOfFilms)){
+		numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели? ', '');
+	}
+}
+
+start();
+
+const personalMovieDB={
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false,
+
+};
+
+for (let i=0; i<2; i++){
+	const a=prompt('Один из последних просмотренных фильмов? ', ''),
+		  b=prompt('На сколько оцените его? ', '');
+	if (a!=null&&b!=null&&a!=''&&b!=''&&a!=a.length<50){
+		personalMovieDB.movies[a]=b;
+		console.log(personalMovieDB);
+	}else{
+		i--;
+	}
+};
+
+if (personalMovieDB.count<10){
+	console.log("Просмотрено довольно мало фильмов");
+} else if(personalMovieDB.count>=10&&personalMovieDB.count<30){
+	console.log("Вы классический зритель");
+}else if(personalMovieDB.count>=30){
+	console.log("Вы киноман");
+}else{
+	console.log('Произошла ошибка');
+}
