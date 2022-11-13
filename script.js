@@ -338,95 +338,95 @@
 // console.log(parseInt(test));
 // console.log(parseFloat(test));
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start(){
-	numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели? ', '');
+// function start(){
+// 	numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели? ', '');
 
-	while(numberOfFilms==''||numberOfFilms==null||isNaN(numberOfFilms)){
-		numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели? ', '');
-	}
-}
+// 	while(numberOfFilms==''||numberOfFilms==null||isNaN(numberOfFilms)){
+// 		numberOfFilms= +prompt('Сколько фильмов вы уже посмотрели? ', '');
+// 	}
+// }
 
-start();
-
-
-
-let personalMovieDB={
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: true,
-	secret:[],
-
-};
-
-
-function rememberMyFilms(){
-	for (let i=0; i<2; i++){
-		const a=prompt('Один из последних просмотренных фильмов? ', ''),
-		  b=prompt('На сколько оцените его? ', '');
-		if (a!=null&&b!=null&&a!=''&&b!=''&&a!=a.length<50){
-			personalMovieDB.movies[a]=b;			
-		}else{
-			i--;
-		}
-	}
-}
-
-rememberMyFilms();
+// start();
 
 
 
-function detectPersonalMovie(){
-	if (personalMovieDB.count<10){
-		console.log("Просмотрено довольно мало фильмов");
-	} else if(personalMovieDB.count>=10&&personalMovieDB.count<30){
-		console.log("Вы классический зритель");
-	}else if(personalMovieDB.count>=30){
-		console.log("Вы киноман");
-	}else{
-		console.log('Произошла ошибка');
-	}
-}
+// let personalMovieDB={
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: true,
+// 	secret:[],
 
-detectPersonalMovie();
+// };
 
 
-function writeYourGenres(){
-	for(let i=1; i<=3; i++){
-		let genre=prompt(`Ваш любимый жанр под номером ${i}`);
+// function rememberMyFilms(){
+// 	for (let i=0; i<2; i++){
+// 		const a=prompt('Один из последних просмотренных фильмов? ', ''),
+// 		  b=prompt('На сколько оцените его? ', '');
+// 		if (a!=null&&b!=null&&a!=''&&b!=''&&a!=a.length<50){
+// 			personalMovieDB.movies[a]=b;			
+// 		}else{
+// 			i--;
+// 		}
+// 	}
+// }
+
+// rememberMyFilms();
+
+
+
+// function detectPersonalMovie(){
+// 	if (personalMovieDB.count<10){
+// 		console.log("Просмотрено довольно мало фильмов");
+// 	} else if(personalMovieDB.count>=10&&personalMovieDB.count<30){
+// 		console.log("Вы классический зритель");
+// 	}else if(personalMovieDB.count>=30){
+// 		console.log("Вы киноман");
+// 	}else{
+// 		console.log('Произошла ошибка');
+// 	}
+// }
+
+// detectPersonalMovie();
+
+
+// function writeYourGenres(){
+// 	for(let i=1; i<=3; i++){
+// 		let genre=prompt(`Ваш любимый жанр под номером ${i}`);
 		
-		personalMovieDB.genres[i-1]=genre;
-	}
-}
+// 		personalMovieDB.genres[i-1]=genre;
+// 	}
+// }
 
-writeYourGenres();
-
-
-function privatDataBase(){
-	let privat=confirm('Сделать список приватным');
-	if (privat===true){
-		personalMovieDB.privat=true;
-	}else{
-		personalMovieDB.privat=false;
-	}
-}
-
-privatDataBase();
+// writeYourGenres();
 
 
+// function privatDataBase(){
+// 	let privat=confirm('Сделать список приватным');
+// 	if (privat===true){
+// 		personalMovieDB.privat=true;
+// 	}else{
+// 		personalMovieDB.privat=false;
+// 	}
+// }
 
-function showMyDB(){
-	if (personalMovieDB.privat===false){
-		console.log(personalMovieDB);
-	}else{
-		console.log('Список приватный!');
-	}
-}
+// privatDataBase();
 
-showMyDB();
+
+
+// function showMyDB(){
+// 	if (personalMovieDB.privat===false){
+// 		console.log(personalMovieDB);
+// 	}else{
+// 		console.log('Список приватный!');
+// 	}
+// }
+
+// showMyDB();
 
 // function showMyDB(hidden){
 // 	if (!hidden){
@@ -436,13 +436,131 @@ showMyDB();
 
 // showMyDB(personalMovieDB.privat);
 
-function secretCase(){
-	let a= +prompt('Количество записей в секретный массив');
-	for(let i=1;i<= +a; i++){
-		let secretPut=prompt(`Сделай запись ${i}`)
-		personalMovieDB.secret[i-1]=secretPut;
+// function secretCase(){
+// 	let a= +prompt('Количество записей в секретный массив');
+// 	for(let i=1;i<= +a; i++){
+// 		let secretPut=prompt(`Сделай запись ${i}`)
+// 		personalMovieDB.secret[i-1]=secretPut;
+// 	}
+// 	console.log(personalMovieDB.secret);
+// }
+
+// secretCase();
+
+
+// коллбак функции выполняется строго после той функции, которая идет перед. в примере ниже. видим что функции вызываются одна за другой, но ответ получается у первой с задержкой
+// function first(){
+// 	setTimeout(function(){
+// 		console.log("1");
+// 	}, 500);
+// }
+
+// function second(){
+// 	console.log("2");
+// }
+
+// first();
+// second();
+
+// function learnJS(lang, callback){
+// 	console.log(`Я учу: ${lang}`);
+// 	callback();
+// }
+
+// function done(){
+// 	console.log('Я прошёл этот урок');
+// }
+
+// learnJS('JS', done);
+
+// function hello(hello, callback){
+// 	console.log(`Я говорю: ${hello}`);
+// 	callback();
+// }
+// function second(){
+// 	console.log('Привет, мир!');
+// }
+// hello('Hello world!', second);
+
+
+
+// объекты, деструктиризация объектов
+
+const options={
+	name: 'test',
+	width: 1024,
+	height: 1024,
+	colors:{
+		border:'black',
+		bg:'red'
 	}
-	console.log(personalMovieDB.secret);
 }
 
-secretCase();
+// метод ключей объекта
+console.log(Object.keys(options).length);
+
+
+
+// // console.log(options.name);
+
+// // // delete options.name;
+
+// // console.log(options);
+
+// // прием счётчика
+// let counter=0;
+// // способ перебора for in
+// for(let key in options){
+// 	if (typeof(options[key])==='object'){
+// 		for(let i in options[key]){
+// 			console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+			
+// 		}
+// 	}else{
+// 		console.log(`Свойство ${key} имеет значение ${options[key]}`);
+		
+// 	}
+	
+// }
+// for(let i in options){
+// 	counter++;
+// }
+// console.log(counter);
+// // console.log(options['colors']['border']);
+// // const obj={
+// // 	name:'Grigory',
+// // 	age: 32,
+// // 	sex: 'male',
+// // 	idiot:true
+// // }
+
+// // for(let key in obj){
+// // 	alert(`Свойство ${key} имеет значение ${obj[key]}`);
+// // }
+
+// // const options={
+// // 	color: 'red',
+// // 	border:1,
+// // 	width: 100,
+// // 	height: 200
+// // };
+
+// // for(let key in options){
+// // 	console.log(`В объекте ключ ${key} имеет значение ${options[key]}`);
+// // };
+
+
+const objPage={
+	gtim:'ff',
+	hex: 1,
+	guru: {
+		first:'Pasha',
+		second:'Masha'
+	},
+	makeTest: function(){
+		console.log('Test');
+	}
+};
+objPage.makeTest();
+
+console.log(Object.keys(objPage).length);
