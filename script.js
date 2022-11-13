@@ -358,6 +358,7 @@ let personalMovieDB={
 	actors: {},
 	genres: [],
 	privat: true,
+	secret:[],
 
 };
 
@@ -415,7 +416,6 @@ function privatDataBase(){
 
 privatDataBase();
 
-alert(personalMovieDB.genres[2]);
 
 
 function showMyDB(){
@@ -435,3 +435,14 @@ showMyDB();
 // }
 
 // showMyDB(personalMovieDB.privat);
+
+function secretCase(){
+	let a= +prompt('Количество записей в секретный массив');
+	for(let i=1;i<= +a; i++){
+		let secretPut=prompt(`Сделай запись ${i}`)
+		personalMovieDB.secret[i-1]=secretPut;
+	}
+	console.log(personalMovieDB.secret);
+}
+
+secretCase();
