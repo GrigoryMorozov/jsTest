@@ -486,18 +486,18 @@
 
 // объекты, деструктиризация объектов
 
-const options={
-	name: 'test',
-	width: 1024,
-	height: 1024,
-	colors:{
-		border:'black',
-		bg:'red'
-	}
-}
+// const options={
+// 	name: 'test',
+// 	width: 1024,
+// 	height: 1024,
+// 	colors:{
+// 		border:'black',
+// 		bg:'red'
+// 	}
+// }
 
-// метод ключей объекта
-console.log(Object.keys(options).length);
+// // метод ключей объекта
+// console.log(Object.keys(options).length);
 
 
 
@@ -550,17 +550,254 @@ console.log(Object.keys(options).length);
 // // };
 
 
-const objPage={
-	gtim:'ff',
-	hex: 1,
-	guru: {
-		first:'Pasha',
-		second:'Masha'
-	},
-	makeTest: function(){
-		console.log('Test');
-	}
-};
-objPage.makeTest();
+// const objPage={
+// 	gtim:'ff',
+// 	hex: 1,
+// 	guru: {
+// 		first:'Pasha',
+// 		second:'Masha'
+// 	},
+// 	makeTest: function(){
+// 		console.log('Test');
+// 	}
+// };
+// objPage.makeTest();
 
-console.log(Object.keys(objPage).length);
+// console.log(Object.keys(objPage).length);
+
+// массивы и псевдомассивы
+// const arr=[1, 22, 333, 6, 8];
+
+// arr.pop();
+// arr.push(10); 
+
+// console.log(arr.length);
+
+// console.log(arr);
+
+// перебор массива
+
+// for(let i=0; i<arr.length; i++){
+// 	console.log(arr[i]);
+// }
+
+// for(let value of arr){
+// 	console.log(value);
+// }
+
+// самый удобный элемент страницы
+// arr.forEach(function(item, i, arr){
+// 	console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// const str=prompt("","");
+// const prodact=str.split(", ");
+// prodact.sort();
+// console.log(prodact. join('; '));
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b){
+// 	return a-b;
+// }
+
+// псевдомассивы
+
+
+
+// let a=5,
+// 	b=a;
+
+// b=b+5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj={
+// 	a: 5,
+// 	b: 1
+// };
+
+// const copy=obj; //передаётся ссылка, далее мы работаем не с копией, а с ссылкой
+
+// copy.a=10;
+// console.log(copy);
+// console.log(obj);
+
+// function copy(mainObj){
+// 	let objCopy={};
+// 	let key;
+// 	for (key in mainObj){
+// 		objCopy[key]= mainObj[key];
+// 	}
+
+// 	return objCopy;
+// }
+
+// const numbers={
+// 	a:2,
+// 	b:5,
+// 	c:{
+// 		x:7,
+// 		y:4
+// 	}
+// };
+
+// let newNumbers=copy(numbers);
+
+// newNumbers.a=10;
+// console.log(newNumbers);
+// console.log(numbers);
+
+
+
+// практика 1,2,3,4
+
+// let numberOfFilms= +prompt("Сколько фильмов вы уже посмотрели?","");
+
+// const personalMovieDB={
+// 	count: numberOfFilms,
+// 	movies:{},
+// 	actors:{},
+// 	genres:[],
+// 	privat: false
+// };
+
+// for (let i=0; i<2; i++){
+// 	let a=prompt('Один из последних просмотренных фильмов?', '');
+// 	let b=prompt('На сколько оцените его?','');
+// 	if(a!=null&&b!=null&&a!=''&&b!=''&&a!=a.length<50){
+// 		personalMovieDB.movies[a]=b;
+// 	}
+// 	else{
+// 		i--;
+// 	};
+
+// }
+
+// let privDB=confirm("Сделать базу приватной?");
+
+// if(privDB!==true){
+// 	personalMovieDB.privat=true;
+// }
+// else{
+// 	personalMovieDB.privat=false;
+// }
+
+
+// function showMyDB(){
+// 	if(personalMovieDB.privat===true){
+// 		console.log(personalMovieDB);
+// 	}
+// 	else{
+// 		console.log("Приватная база");
+// 	}
+
+// }
+
+
+// function fun(){
+// 	if (personalMovieDB.count<10){
+// 		console.log("Просмотрено довольно мало фильмов");
+// 	}
+// 	else if(personalMovieDB.count>=10&&personalMovieDB.count<30){
+// 		console.log('Вы классический зритель');
+// 	}
+// 	else if(personalMovieDB.count>=30){
+// 		console.log("Вы киноман")
+// 	}
+// }
+
+// function writeYourGenres(){
+// 	for(let i=1; i<3; i++){
+// 		let questionUser=prompt(`Ваш любимый жанр под номером ${i}`,'');
+// 		personalMovieDB.genres[i-1]=questionUser;
+// 	}
+// }
+// writeYourGenres();
+// fun();
+// showMyDB();
+
+
+
+// let num=20;
+// function showFirstMessage(text){
+// 	console.log(text);
+// 	let num=10;
+// }
+
+// showFirstMessage("hello");
+// console.log(num);
+
+
+
+const personalMovieDB={
+	count: 0,
+	movies:{},
+	actors:{},
+	genres:[],
+	privat:false,
+	start: function(){
+		personalMovieDB.count= +prompt('Сколько фильмов вы уже посмотрели','');
+
+		while(personalMovieDB.count==''|| personalMovieDB.count==null|| isNaN(personalMovieDB.count)){
+			personalMovieDB.count=+prompt('Сколько фильмов вы уже посмотрели','');
+		}
+	},
+	rememberMyFilms:function(){
+		for (let i=0; i<2; i++){
+			const a=prompt('Один из последних просмотренных фильмов?', ''),
+			  	b=prompt('На сколько оцените его?','');
+				if (a!=null&&b!=null&&a!=''&&b!=''&&a.length<50){
+				personalMovieDB.movies[a]=b;
+				console.log('done');		
+				} else{
+					console.log('error');
+					i--;
+				}
+		}
+	},
+	detectPersonalLevel: function(){
+		if (personalMovieDB.count<10){
+			console.log('Просмотрено довольно много фильмов');
+		} else if(personalMovieDB.count>=10&&personalMovieDB.count<30){
+			console.log('Вы классический зритель');
+		} else if (personalMovieDB.count>=30){
+			console.log('Вы киноман');
+		} else{
+			console.log('Произошла ошибка');
+		}
+	},
+	showMyDB:function(hidden){
+		if(!hidden){
+			console.log(personalMovieDB);
+		}
+	},
+	toggleVisibleMyDB:function(){
+		if(personalMovieDB.privat){
+			personalMovieDB.privat=false;
+		}else{
+			personalMovieDB.privat=true;
+		}
+	},
+	writeYourGenres: function(){
+		for(let i=1; i<=3; i++){
+			let genre=prompt(`Ваш любимый жанр под номером ${i}`);
+			if(genre==''||genre==null){
+				console.log('Вы ввели неккоретные данные или не ввели вообще');
+				i--;
+			}else{
+				personalMovieDB.genres[i-1]=genre;
+			}
+			
+
+		}
+		personalMovieDB.genres.forEach((item,i)=>{
+			console.log(`Любимый жанр ${i+1} - это ${item}`);
+		})
+	}
+
+};
+
+
+
